@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="256" height="256">
+  <!-- Clapperboard top bar -->
+  <rect x="30" y="20" width="450" height="80" rx="10" fill="#1a1a1a" stroke="#000" stroke-width="8"/>
+  
+  <!-- Top clapperboard stripes -->
+  <g>
+    <!-- Stripe 1 - white -->
+    <polygon points="60,30 120,30 145,90 85,90" fill="#ffffff"/>
+    <!-- Stripe 2 - light blue -->
+    <polygon points="135,30 195,30 220,90 160,90" fill="#5ba3d0"/>
+    <!-- Stripe 3 - white -->
+    <polygon points="210,30 270,30 295,90 235,90" fill="#ffffff"/>
+    <!-- Stripe 4 - light blue -->
+    <polygon points="285,30 345,30 370,90 310,90" fill="#5ba3d0"/>
+    <!-- Stripe 5 - white -->
+    <polygon points="360,30 420,30 445,90 385,90" fill="#ffffff"/>
+    <!-- Corner accent - light blue -->
+    <polygon points="445,20 470,20 455,50" fill="#5ba3d0"/>
+    <!-- Corner accent - light blue (left) -->
+    <polygon points="30,20 55,50 30,55" fill="#5ba3d0"/>
+  </g>
+  
+  <!-- Main clapperboard body -->
+  <rect x="30" y="90" width="450" height="100" rx="10" fill="#1a1a1a" stroke="#000" stroke-width="8"/>
+  
+  <!-- Main clapperboard stripes -->
+  <g>
+    <!-- Stripe 1 - light blue -->
+    <polygon points="60,100 120,100 145,160 85,160" fill="#5ba3d0"/>
+    <!-- Stripe 2 - white -->
+    <polygon points="135,100 195,100 220,160 160,160" fill="#ffffff"/>
+    <!-- Stripe 3 - light blue -->
+    <polygon points="210,100 270,100 295,160 235,160" fill="#5ba3d0"/>
+    <!-- Stripe 4 - white -->
+    <polygon points="285,100 345,100 370,160 310,160" fill="#ffffff"/>
+    <!-- Stripe 5 - light blue -->
+    <polygon points="360,100 420,100 445,160 385,160" fill="#5ba3d0"/>
+    <!-- Corner accent - light blue (right) -->
+    <polygon points="455,95 475,120 455,155" fill="#5ba3d0"/>
+  </g>
+  
+  <!-- Yellow film frame border -->
+  <rect x="40" y="200" width="430" height="260" rx="15" fill="none" stroke="#f4d03f" stroke-width="20"/>
+  
+  <!-- White inner frame -->
+  <rect x="70" y="230" width="370" height="200" rx="8" fill="#ffffff" stroke="#000" stroke-width="6"/>
+  
+  <!-- Play button inside -->
+  <g>
+    <!-- Play button background circle -->
+    <circle cx="255" cy="330" r="45" fill="#ff6b6b" stroke="#000" stroke-width="4"/>
+    <!-- Play triangle -->
+    <polygon points="240,310 240,350 280,330" fill="#000"/>
+  </g>
+  
+  <!-- Adjustment knob on frame -->
+  <circle cx="290" cy="225" r="8" fill="#000" stroke="#000" stroke-width="2"/>
+</svg>
