@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Film, User, Search, Home, TrendingUp } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
+import { Film, User, Search, Home, TrendingUp, LogOut } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -8,6 +10,14 @@ interface NavigationProps {
 }
 
 export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
+  const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <nav className="bg-cinema-darker/95 backdrop-blur-sm border-b border-cinema-light sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
@@ -62,13 +72,32 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
 
           {/* User Section */}
           <div className="flex items-center gap-3">
-            <Button
-              variant="outline"
-              className="border-cinema-light text-foreground hover:bg-cinema-light"
-            >
-              <User className="w-4 h-4 mr-2" />
-              Sign In
-            </Button>
+            {isAuthenticated && user ? (
+              <>
+                <div className="hidden md:block">
+                  <p className="text-sm text-muted-foreground">
+                    Welcome, <span className="text-cinema-gold font-semibold">{user.email.split('@')[0]}</span>
+                  </p>
+                </div>
+                <Button
+                  onClick={handleLogout}
+                  variant="outline"
+                  className="border-cinema-light text-foreground hover:bg-cinema-light"
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <Button
+                onClick={() => navigate('/login')}
+                variant="outline"
+                className="border-cinema-light text-foreground hover:bg-cinema-light"
+              >
+                <User className="w-4 h-4 mr-2" />
+                Sign In
+              </Button>
+            )}
           </div>
         </div>
 
